@@ -10,24 +10,18 @@ public class Card
     // instance variables - replace the example below with your own
     private int rank;
     private String face;
-    private String suit;
 
     /**
      * Constructor for objects of class Card
      */
-    public Card(int rank, String face, String suit)        
+    public Card(int rank, String face)        
     {
         this.rank = rank;
         this.face = face;
-        this.suit = suit;
     }
 
     public int getRank() {
         return this.rank;
-    }
-    
-    public String getSuit() {
-        return this.suit;
     }
 
     public String getFace() {
