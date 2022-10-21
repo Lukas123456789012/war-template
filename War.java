@@ -1,3 +1,5 @@
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * War game class
@@ -7,6 +9,8 @@
  */
 public class War
 {
+    Deck deck = new Deck();
+    Deck[] Hand = new Deck[2];
     /**
      * Constructor for the game
      * Include your initialization here -- card decks, shuffling, etc
@@ -15,7 +19,6 @@ public class War
     public War()
     {
         // Initializations here...
-        Deck d = new Deck();
         // ...then run the event loop
         this.runEventLoop();
     }
@@ -25,7 +28,15 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
-        d.Deck();
+        deck.initializeNewDeck();
+        deck.shuffle();
+        Hand = deck.dealDeck();
+        for (int a = 0; a < 300; a++) {
+            for ( int b = 0; b < 2; b++) {
+                
+            }
+            
+        }
     }
     
     /**

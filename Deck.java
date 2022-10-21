@@ -44,7 +44,7 @@ public class Deck
     /**
      * Shuffles the cards in the deck
      */
-    public void shuffle(List cards) {
+    public void shuffle() {
         Collections.shuffle(cards);
     }
     
@@ -69,10 +69,8 @@ public class Deck
      * Deal the top card of the deck and remove it from the deck
      * @returns The top card of the deck (at cards index 0)
      */
-    public Card dealCardFromDeck(List<Integer> list) {
-        int i = list.get(0);
-        list.remove(0);
-        return i;
+    public Card dealCardFromDeck() {
+        return null;
     }
     
     /**
