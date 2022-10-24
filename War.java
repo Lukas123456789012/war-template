@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.*;
 
 /**
  * War game class
@@ -31,9 +32,13 @@ public class War
         deck.initializeNewDeck();
         deck.shuffle();
         Hand = deck.dealDeck();
-        for (int a = 0; a < 300; a++) {
+        System.out.println(deck.getDeckSize()); 
+        for (int a = 0; a < 2; a++) {
             for ( int b = 0; b < 2; b++) {
-                
+                if (deck.getDeckSize() == 0 ){
+                     
+                 }
+                break;
             }
             
         }

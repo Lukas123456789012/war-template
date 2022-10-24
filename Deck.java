@@ -22,9 +22,10 @@ public class Deck
     }
     
     public void initializeNewDeck() {
+        String[] suits = {"Hearts","Clubs","Spades","Diamonds"};
         int[] ranks = {2,3,4,5,6,7,8,9,10,11,12,13,14};
         String[] faces = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
-        for ( int i = 0; i < 4; i++) {
+        for (String suit : suits) {
             for (int idx=0; idx<ranks.length; idx++) {
                 Card c = new Card(ranks[idx], faces[idx]);
                 this.cards.add(c);
@@ -70,7 +71,9 @@ public class Deck
      * @returns The top card of the deck (at cards index 0)
      */
     public Card dealCardFromDeck() {
-        return null;
+        Card i = cards.get(0);
+        cards.remove(0);
+        return i;
     }
     
     /**
