@@ -11,7 +11,9 @@ import java.util.*;
 public class Deck
 {
     // instance variables - replace the example below with your own
-    private List<Card> cards;
+    private List<Card> cards; 
+    private List<Card> cards1;
+    private List<Card> cards2;
 
     /**
      * Deck constructor: Create an empty deck of cards
@@ -19,13 +21,14 @@ public class Deck
     public Deck()
     {
         cards = new ArrayList<Card>();
+        cards1 = new ArrayList<Card>();
+        cards2 = new ArrayList<Card>();
     }
     
     public void initializeNewDeck() {
-        String[] suits = {"Hearts","Clubs","Spades","Diamonds"};
         int[] ranks = {2,3,4,5,6,7,8,9,10,11,12,13,14};
         String[] faces = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
-        for (String suit : suits) {
+        for (int i = 0; i < 4; i++) {
             for (int idx=0; idx<ranks.length; idx++) {
                 Card c = new Card(ranks[idx], faces[idx]);
                 this.cards.add(c);
@@ -40,6 +43,14 @@ public class Deck
      */
     public int getDeckSize() {
         return cards.size();
+    }
+    
+    public int getHalf1Size() {
+        return cards1.size();
+    }
+    
+    public int getHalf2Size() {
+        return cards2.size();
     }
     
     /**
@@ -60,7 +71,7 @@ public class Deck
         halves[1] = new Deck();
         boolean idx = false;
         while (this.cards.size() > 0) {
-            halves[idx ? 0 : 1].addCardToDeck(this.dealCardFromDeck());
+            halves[idx ? 0 : 1].addCardToDeck(this.dealCardFromDeck(cards));
             idx = !idx;
         }
         return halves;
@@ -70,7 +81,7 @@ public class Deck
      * Deal the top card of the deck and remove it from the deck
      * @returns The top card of the deck (at cards index 0)
      */
-    public Card dealCardFromDeck() {
+    public Card dealCardFromDeck(List<Card> cards) {
         Card i = cards.get(0);
         cards.remove(0);
         return i;
