@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.*;
 
 /**
@@ -31,19 +32,10 @@ public class War
     public void runEventLoop() {
         deck.initializeNewDeck();
         deck.shuffle();
-        System.out.println(deck.getDeckSize());
         Hand = deck.dealDeck();
+        Hand[0].length();
+        Hand[0].add();
         System.out.println(deck.getDeckSize()); 
-        if (deck.getDeckSize() == 0 ){
-            for (int a = 0; a < 300; a++) {
-                for ( int b = 0; b < 2; b++) {
-                        
-                }   
-            
-            }
-        } else {
-            System.out.print("error with decks");
-        }
     }
     
     /**

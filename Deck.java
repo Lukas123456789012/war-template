@@ -12,8 +12,6 @@ public class Deck
 {
     // instance variables - replace the example below with your own
     private List<Card> cards; 
-    private List<Card> cards1;
-    private List<Card> cards2;
 
     /**
      * Deck constructor: Create an empty deck of cards
@@ -21,16 +19,15 @@ public class Deck
     public Deck()
     {
         cards = new ArrayList<Card>();
-        cards1 = new ArrayList<Card>();
-        cards2 = new ArrayList<Card>();
     }
     
     public void initializeNewDeck() {
+        String[] suits = {"Hearts","Clubs","Spades","Diamonds"};
         int[] ranks = {2,3,4,5,6,7,8,9,10,11,12,13,14};
         String[] faces = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
-        for (int i = 0; i < 4; i++) {
+        for (String suit : suits) {
             for (int idx=0; idx<ranks.length; idx++) {
-                Card c = new Card(ranks[idx], faces[idx]);
+                Card c = new Card(ranks[idx], faces[idx], suit);
                 this.cards.add(c);
             }
         }
@@ -43,14 +40,6 @@ public class Deck
      */
     public int getDeckSize() {
         return cards.size();
-    }
-    
-    public int getHalf1Size() {
-        return cards1.size();
-    }
-    
-    public int getHalf2Size() {
-        return cards2.size();
     }
     
     /**
