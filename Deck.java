@@ -60,7 +60,7 @@ public class Deck
         halves[1] = new Deck();
         boolean idx = false;
         while (this.cards.size() > 0) {
-            halves[idx ? 0 : 1].addCardToDeck(this.dealCardFromDeck(cards));
+            halves[idx ? 0 : 1].addCardToDeck(this.dealCardFromDeck());
             idx = !idx;
         }
         return halves;
@@ -70,7 +70,7 @@ public class Deck
      * Deal the top card of the deck and remove it from the deck
      * @returns The top card of the deck (at cards index 0)
      */
-    public Card dealCardFromDeck(List<Card> cards) {
+    public Card dealCardFromDeck() {
         Card i = cards.get(0);
         cards.remove(0);
         return i;
@@ -81,7 +81,7 @@ public class Deck
      * @param cardToAdd: Card to add to this deck
      */
     public void addCardToDeck(Card cardToAdd) {
-        // To be written
+        cards.add(cardToAdd);
     }
     
 }
