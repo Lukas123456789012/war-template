@@ -55,9 +55,10 @@ public class Deck
      * @returns Deck array where index 0 is the first deck and index 1 is the second deck
      */
     public Deck[] dealDeck() {
-        Deck[] halves = new Deck[2];
+        Deck[] halves = new Deck[3];
         halves[0] = new Deck();
         halves[1] = new Deck();
+        halves[2] = new Deck();
         boolean idx = false;
         while (this.cards.size() > 0) {
             halves[idx ? 0 : 1].addCardToDeck(this.dealCardFromDeck());
